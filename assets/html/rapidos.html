@@ -43,46 +43,27 @@
   <header id="header" class="fixed-top d-flex align-items-center ">
     <div class="container d-flex justify-content-between align-items-center">
 
+      
       <div class="logo">
-        <h1 class="text-light"><a href="../../index.html"><span>Moderna</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <h1 class="text-light"><a href="index.html"><img src="assets/img/Logo.png" alt="" class="img-fluid">
+        <strong style="color: #FBB318;">CINESPE</strong></a></h1>
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="" href="../../index.html">Inicio</a></li>
+          <li><a class="active " href="../../index.html">Inicio</a></li>
           
-          <li><a href="services.html">Snackbar</a></li>
-          <li><a class="active" href="portfolio.html">Peliculas</a></li>
-         
-           
-          </li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="../../index.html#portfolio" style="color: #FBB318;">Películas</a></li>
+          <li><a href="../../index.html#services" style="color: #FBB318;">Snacks</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
     </div>
   </header><!-- End Header -->
 
   <main id="main">
 
-    <!-- ======= Our Portfolio Section ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Portfolio Details</h2>
-          <ol>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li>Portfolio Details</li>
-          </ol>
-        </div>
-
-      </div>
-    </section><!-- End Our Portfolio Section -->
+    
 
     <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
@@ -103,8 +84,9 @@
 
 
               </div>
-              <button id="prevButton">Anterior</button>
-              <button id="nextButton">Siguiente</button>
+              
+              <li id="prevButton"  style="color: #FBB318;">Anterior</li><li id="nextButton"  style="color: #FBB318;">Siguiente</li>
+              
               <div class="swiper-pagination"></div>
             </div>
           </div>
@@ -121,13 +103,18 @@
             </div>
             <div class="portfolio-description">
               <h2>Sinopsis</h2>
-              <p><peli-rapidos></peli-rapidos>              </p>
+
+              <p><peli-rapidos></peli-rapidos></p>   
+
             </div>
           </div>
 
         </div>
 
       </div>
+      <br>
+      <br>
+      
     </section><!-- End Portfolio Details Section -->
 
   </main><!-- End #main -->
@@ -135,22 +122,7 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
 
-    <div class="footer-newsletter">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-          </div>
-          <div class="col-lg-6">
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
+  
     <div class="footer-top">
       <div class="container">
         <div class="row">
@@ -231,7 +203,8 @@
   <script src="../vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="../js/main.js"></script>
+
+  <script src="../js/main.js" type="module"></script>
 
 </body>
 

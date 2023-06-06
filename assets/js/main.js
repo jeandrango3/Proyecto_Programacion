@@ -5,6 +5,7 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
 (function() {
   "use strict";
 
@@ -234,33 +235,6 @@
   new PureCounter();
 
 })()
-const slides = Array.from(document.getElementsByClassName("slide"));
-const prevButton = document.getElementById("prevButton");
-const nextButton = document.getElementById("nextButton");
-let currentSlideIndex = 0;
-
-function showSlide(index) {
-  slides.forEach((slide) => {
-    slide.style.display = "none";
-  });
-  slides[index].style.display = "block";
-}
-
-function showNextSlide() {
-  currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-  showSlide(currentSlideIndex);
-}
-
-function showPrevSlide() {
-  currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-  showSlide(currentSlideIndex);
-}
-
-prevButton.addEventListener("click", showPrevSlide);
-nextButton.addEventListener("click", showNextSlide);
-
-showSlide(currentSlideIndex);
-
 
 class pelirapidos extends HTMLElement{
   constructor(){
@@ -279,4 +253,42 @@ class pelirapidos extends HTMLElement{
 }
 
 customElements.define("peli-rapidos", pelirapidos);
+
+export const slides = Array.from(document.getElementsByClassName("slide"));
+export const prevButton = document.getElementById("prevButton");
+export const nextButton = document.getElementById("nextButton");
+export let currentSlideIndex = 0;
+
+export function showSlide(index) {
+  slides.forEach((slide) => {
+    slide.style.display = "none";
+  });
+  slides[index].style.display = "block";
+}
+
+export function showNextSlide() {
+  currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+  showSlide(currentSlideIndex);
+}
+
+export function showPrevSlide() {
+  currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+  showSlide(currentSlideIndex);
+}
+
+prevButton.addEventListener("click", showPrevSlide);
+nextButton.addEventListener("click", showNextSlide);
+
+showSlide(currentSlideIndex);
+
+export function startAutoSlide() {
+  intervalId = setInterval(showNextSlide, 3000); // Cambia 3000 por el tiempo en milisegundos que deseas
+}
+
+export function stopAutoSlide() {
+  clearInterval(intervalId);
+}
+
+startAutoSlide();
+
 
