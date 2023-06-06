@@ -249,9 +249,10 @@ class pelirapidos extends HTMLElement{
         conocido: un terrible peligro que resurge del pasado, que se mueve por 
         una sangrienta sed de venganza y que está dispuesto a destrozar a la 
         familia y destruir para siempre todo lo que a Dom le importa.`;
+
+        this.style.textAlign = "justify";
   }
 }
-
 customElements.define("peli-rapidos", pelirapidos);
 
 export const slides = Array.from(document.getElementsByClassName("slide"));
