@@ -255,6 +255,18 @@ class pelirapidos extends HTMLElement{
 }
 customElements.define("peli-rapidos", pelirapidos);
 
+class pelisirenita extends HTMLElement{
+  constructor(){
+      super();
+  }
+  connectedCallback(){
+      this.innerHTML=`Anhelando conocer el mundo más allá del mar, una joven sirena visita la superficie 
+      y se enamora del apuesto príncipe Eric. Siguiendo su corazón, hace un trato con la malvada bruja del mar
+      , Úrsula, para experimentar la vida en tierra.`;
+  }
+}
+customElements.define("peli-sirenita",pelisirenita);
+
 export const slides = Array.from(document.getElementsByClassName("slide"));
 export const prevButton = document.getElementById("prevButton");
 export const nextButton = document.getElementById("nextButton");
