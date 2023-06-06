@@ -241,16 +241,16 @@ class pelirapidos extends HTMLElement{
       super();
   }
   connectedCallback(){
-      this.innerHTML=`El final del camino comienza. Durante numerosas misiones
+      this.innerHTML=`<div align="justify">El final del camino comienza. Durante numerosas misiones
       más que imposibles, Dom Toretto y su familia han sido capaces de ser más
       listos, de tener más valor y de ir
        más rápido que cualquier enemigo que se cruzara con ellos. 
        Pero ahora tendrán que enfrentarse al oponente más letal que jamás hayan
         conocido: un terrible peligro que resurge del pasado, que se mueve por 
         una sangrienta sed de venganza y que está dispuesto a destrozar a la 
-        familia y destruir para siempre todo lo que a Dom le importa.`;
+        familia y destruir para siempre todo lo que a Dom le importa.</div>`;
 
-        this.style.textAlign = "justify";
+        
   }
 }
 customElements.define("peli-rapidos", pelirapidos);
@@ -260,9 +260,9 @@ class pelisirenita extends HTMLElement{
       super();
   }
   connectedCallback(){
-      this.innerHTML=`Anhelando conocer el mundo más allá del mar, una joven sirena visita la superficie 
+      this.innerHTML=`<div align="justify">Anhelando conocer el mundo más allá del mar, una joven sirena visita la superficie 
       y se enamora del apuesto príncipe Eric. Siguiendo su corazón, hace un trato con la malvada bruja del mar
-      , Úrsula, para experimentar la vida en tierra.`;
+      , Úrsula, para experimentar la vida en tierra.</div>`;
   }
 }
 customElements.define("peli-sirenita",pelisirenita);
