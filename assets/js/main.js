@@ -234,3 +234,49 @@
   new PureCounter();
 
 })()
+const slides = Array.from(document.getElementsByClassName("slide"));
+const prevButton = document.getElementById("prevButton");
+const nextButton = document.getElementById("nextButton");
+let currentSlideIndex = 0;
+
+function showSlide(index) {
+  slides.forEach((slide) => {
+    slide.style.display = "none";
+  });
+  slides[index].style.display = "block";
+}
+
+function showNextSlide() {
+  currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+  showSlide(currentSlideIndex);
+}
+
+function showPrevSlide() {
+  currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+  showSlide(currentSlideIndex);
+}
+
+prevButton.addEventListener("click", showPrevSlide);
+nextButton.addEventListener("click", showNextSlide);
+
+showSlide(currentSlideIndex);
+
+
+class pelirapidos extends HTMLElement{
+  constructor(){
+      super();
+  }
+  connectedCallback(){
+      this.innerHTML=`El final del camino comienza. Durante numerosas misiones
+      más que imposibles, Dom Toretto y su familia han sido capaces de ser más
+      listos, de tener más valor y de ir
+       más rápido que cualquier enemigo que se cruzara con ellos. 
+       Pero ahora tendrán que enfrentarse al oponente más letal que jamás hayan
+        conocido: un terrible peligro que resurge del pasado, que se mueve por 
+        una sangrienta sed de venganza y que está dispuesto a destrozar a la 
+        familia y destruir para siempre todo lo que a Dom le importa.`;
+  }
+}
+
+customElements.define("peli-rapidos", pelirapidos);
+
