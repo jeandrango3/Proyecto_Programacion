@@ -5,6 +5,7 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
 (function() {
   "use strict";
 
@@ -234,24 +235,56 @@
   new PureCounter();
 
 })()
-const slides = Array.from(document.getElementsByClassName("slide"));
-const prevButton = document.getElementById("prevButton");
-const nextButton = document.getElementById("nextButton");
-let currentSlideIndex = 0;
 
-function showSlide(index) {
+class pelirapidos extends HTMLElement{
+  constructor(){
+      super();
+  }
+  connectedCallback(){
+      this.innerHTML=`<div align="justify">El final del camino comienza. Durante numerosas misiones
+      más que imposibles, Dom Toretto y su familia han sido capaces de ser más
+      listos, de tener más valor y de ir
+       más rápido que cualquier enemigo que se cruzara con ellos. 
+       Pero ahora tendrán que enfrentarse al oponente más letal que jamás hayan
+        conocido: un terrible peligro que resurge del pasado, que se mueve por 
+        una sangrienta sed de venganza y que está dispuesto a destrozar a la 
+        familia y destruir para siempre todo lo que a Dom le importa.</div>`;
+
+        
+  }
+}
+customElements.define("peli-rapidos", pelirapidos);
+
+class pelisirenita extends HTMLElement{
+  constructor(){
+      super();
+  }
+  connectedCallback(){
+      this.innerHTML=`<div align="justify">Anhelando conocer el mundo más allá del mar, una joven sirena visita la superficie 
+      y se enamora del apuesto príncipe Eric. Siguiendo su corazón, hace un trato con la malvada bruja del mar
+      , Úrsula, para experimentar la vida en tierra.</div>`;
+  }
+}
+customElements.define("peli-sirenita",pelisirenita);
+
+export const slides = Array.from(document.getElementsByClassName("slide"));
+export const prevButton = document.getElementById("prevButton");
+export const nextButton = document.getElementById("nextButton");
+export let currentSlideIndex = 0;
+
+export function showSlide(index) {
   slides.forEach((slide) => {
     slide.style.display = "none";
   });
   slides[index].style.display = "block";
 }
 
-function showNextSlide() {
+export function showNextSlide() {
   currentSlideIndex = (currentSlideIndex + 1) % slides.length;
   showSlide(currentSlideIndex);
 }
 
-function showPrevSlide() {
+export function showPrevSlide() {
   currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
   showSlide(currentSlideIndex);
 }
@@ -261,22 +294,14 @@ nextButton.addEventListener("click", showNextSlide);
 
 showSlide(currentSlideIndex);
 
-
-class pelirapidos extends HTMLElement{
-  constructor(){
-      super();
-  }
-  connectedCallback(){
-      this.innerHTML=`El final del camino comienza. Durante numerosas misiones
-      más que imposibles, Dom Toretto y su familia han sido capaces de ser más
-      listos, de tener más valor y de ir
-       más rápido que cualquier enemigo que se cruzara con ellos. 
-       Pero ahora tendrán que enfrentarse al oponente más letal que jamás hayan
-        conocido: un terrible peligro que resurge del pasado, que se mueve por 
-        una sangrienta sed de venganza y que está dispuesto a destrozar a la 
-        familia y destruir para siempre todo lo que a Dom le importa.`;
-  }
+export function startAutoSlide() {
+  intervalId = setInterval(showNextSlide, 3000); // Cambia 3000 por el tiempo en milisegundos que deseas
 }
 
-customElements.define("peli-rapidos", pelirapidos);
+export function stopAutoSlide() {
+  clearInterval(intervalId);
+}
+
+startAutoSlide();
+
 
