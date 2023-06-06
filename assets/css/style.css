@@ -561,7 +561,7 @@ h6,
   box-shadow: 0 5px 26px 0 rgba(68, 88, 144, 0.14);
   transition: all 0.3s ease-in-out;
   text-align: center;
-  border: 1px solid #fff;
+  border: 1px solid #F16A26;
 }
 
 .services .icon {
@@ -596,11 +596,11 @@ h6,
 }
 
 .services .icon-box-pink .icon {
-  background: #fceef3;
+  background: #F16A26;
 }
 
 .services .icon-box-pink .icon i {
-  color: #ff689b;
+  color: #F16A26;
 }
 
 .services .icon-box-pink:hover {
